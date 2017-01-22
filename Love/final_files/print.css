@@ -1,0 +1,32 @@
+body {
+  background-color: #fff;
+}
+#header {
+  position: relative;
+  border: 0;
+}
+#well article {
+  padding: 0;
+  border: 0;
+}
+#well article .item-meta-mobile {
+  display: block;
+}
+.item-body {
+  width: auto;
+  max-width: 940px;
+  margin: auto;
+}
+.item-meta,
+.inline-ad,
+.ad-engage,
+.article-footer,
+.after-article,
+#queue-toggle,
+#header .left,
+#header .right,
+.item-body .pull-quote,
+#marquee-container {
+  display: none !important;
+}
+/*# sourceMappingURL=styles.css.map */
