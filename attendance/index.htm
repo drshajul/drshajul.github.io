@@ -8,9 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class='button' onclick="onButtonClicked()">Select File</button>
-    <button class='button' id="DownloadButton" style="display: none;" onclick="onDownloadClicked()">Download</button>
-    <div id="content"></div>
-    <script src="Attendance.js"></script>
+    <div id="container">
+        <div id="header"></div>
+        <div id="content">
+            <table class="hidden">
+                <tr>
+                    <tr>
+                        <td><button class='button' onclick="onButtonClicked()">Select File</button></td>
+                        <td><button class='button' id="DownloadButton" style="display: none;" onclick="onDownloadClicked()">Download</button></td>
+                    </tr>
+                </tr>
+            </table>
+        </div>
+        <script src="Attendance.js"></script>
+        <div class="footer">
+            <a href='https://www.symptoma.es/'>Symptoma</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=cd4ad9e42f750a37f41402b500ec53f0fd937475'></script>
+            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/701814/t/3"></script>    
+        </div>
+    </div>
+    
+    
 </body>
 </html>
