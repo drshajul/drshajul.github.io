@@ -10,9 +10,13 @@ function onlyUnique(value, index, self) {
 
 // Button callback
 async function onButtonClicked(){
-    let files = await selectFile("text/csv", true);
+    let files = await selectFile(".csv,text/csv", true);
+    if(files[0].name.indexOf(".csv") === -1){
+        alert("We are expecting a CSV file. Kindly upload the downloaded file directly without first opening it in MS Excel");
+        return false;
+    };
+    
     d = new Date(files[0].lastModified);
-
     let dateString = d.getDate() + '_' + (d.getMonth()+1) + '_' + d.getFullYear();
     
     let myArr = [];
@@ -55,7 +59,6 @@ function selectFile (contentType, multiple){
     return new Promise(resolve => {
         let input = document.createElement('input');
         input.type = 'file';
-        input.multiple = multiple;
         input.accept = contentType;
 
         input.onchange = _ => {
