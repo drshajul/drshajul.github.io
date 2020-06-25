@@ -1,0 +1,65 @@
+$myGreen: #4CAF50;
+$myHeaderBackground: #efe;
+    
+body {
+    padding: 20px;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* needed for container min-height */
+  }
+
+table.hidden {
+  border: hidden;
+  margin: 0;
+}
+div#container {
+  padding:1em 1em 5em; /* bottom padding for footer */
+  position: relative; /* needed for footer positioning*/
+  height: auto !important; /* real browsers */
+  height: 100%; /* real browsers */
+}
+
+div#header {
+  background: $myHeaderBackground;
+}
+div#content {
+  padding:1em 1em 5em; /* bottom padding for footer */
+  position: relative; /* needed for footer positioning*/
+  min-height: 90%; /* real browsers */
+  height: auto ; /* real browsers */
+  overflow: auto;
+  padding-bottom: 180px;
+}
+div#footer {
+  position: relative;
+  margin-top: -180px;
+  /* negative value of footer height */
+  height: 180px;
+  clear: both;
+  background-color: #ddd;
+}
+
+ul {
+  list-style: none;
+}
+  
+.button {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+  border: 2px solid $myGreen; /* Green */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.button:hover {
+  background-color: $myGreen; /* Green */
+  color: white;
+}
