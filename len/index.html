@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Online Classes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .subheader {
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            max-width: 100px;
+        }
+
+        /* Container for flexboxes */
+        .row {
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        /* Create three equal columns that sits next to each other */
+        .column {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            padding: 10px;
+            position: relative;
+        }
+
+        /* Style the footer */
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 20px;
+            width: 160px;
+        }
+        .button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .buttonred {
+            background-color: white;
+            color: black;
+            border: 2px solid #6b1212;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 20px;
+            width: 160px;
+        }
+        .buttonred:hover {
+            background-color: #6b1212;
+            color: white;
+        }
+
+        .posx {
+            position: absolute;
+            left: 200px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        input[type=text], select, textarea {
+            width: 80%; /* Full width */
+            padding: 12px; /* Some padding */ 
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+            /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            .row {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>Online Class Links</h2>
+    </div>
+    <div class="row">
+        <div class="column subheader" style="background-color:rgb(200, 200, 255);"><p>Leo </p></div>
+        <div class="column" style="background-color:rgb(225, 225, 255);">
+            <p>
+                <a target="_blank" href="https://meetingsapac21.webex.com/meet/pr915326024" class="button">English</a>
+                <span class="posx">Access code:915326024</span>
+            </p>
+
+            <p>
+                <a target="_blank" href="https://meetingsapac23.webex.com/meet/pr912444547 " class="button">Malayalam</a>
+                <span class="posx">Access code :912444547</span>
+            </p>
+
+            <p>
+                <a target="_blank" href="https://meetingsapac20.webex.com/join/pr916399646" class="button">Social Science </a>
+                <span class="posx">Access code:916399646</span>
+            </p>
+
+            <p>
+                <a target="_blank" href="https://meetingsapac19.webex.com/meet/pr911737049" class="button">Science </a>
+                <span class="posx">Access code:911737049</span>
+            </p>
+
+            <p>
+                <a target="_blank" href="https://meetingsapac20.webex.com/meet/pr913619538" class="button">Maths</a>
+                <span class="posx">Access code:913619538</span>
+            </p>
+
+            <p>
+                <a target="_blank" href="https://meetingsapac24.webex.com/meet/pr919011511" class="button">Hindi</a>
+                <span class="posx">Access code:919011511</span>
+            </p>
+        </div>
+        <div class="column subheader" style="background-color:rgb(200, 255, 200);"><p>Neil</p></div>
+        <div class="column" style="background-color:rgb(240, 255, 240);">
+            <p>
+                <a target="_blank" class="buttonred" href="https://meetingsapac21.webex.com/meetingsapac21/j.php?MTID=m1b84e9852226a2317c4519eb4e5f4ff0">English</a>
+                <span class="posx">Meeting: 1567937154, Password: ENGLISH</span>
+            </p>
+            <p>
+                <a target="_blank" class="buttonred" href="https://meetingsapac21.webex.com/meetingsapac21/j.php?MTID=m4580527b00f434a105f71300afed1b2e">Malayalam</a>
+            </p>
+            <p>
+                <a target="_blank" class="buttonred" href="https://meetingsapac22.webex.com/meetingsapac22/j.php?MTID=m07d6871d5e1df6867a64f3720e51a180">Maths</a>
+                <span class="posx">Meeting: 1564583262 Password: maths </span>
+            </p>
+            <p>
+                <a target="_blank" class="buttonred" href="https://meetingsapac24.webex.com/meetingsapac24/j.php?MTID=mfacec2cd6041ceedf291df6f508bc220">Hindi</a>
+                <span class="posx">Meeting: 1660929747 Password: Hindi </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+     <label for="myurl">Enter URL: </label><input type="text" name="myurl" id="myurl">&nbsp;<input type="submit" value="Go" onclick="urlGo()">
+            <script>
+                const urlGo = function(){
+                    url = document.getElementById('myurl').value;
+                    // window.location = url;
+                    window.open(url, "_blank");
+                }
+            </script>
+
+    </div>
+
+</body>
+
+</html>
