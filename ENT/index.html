@@ -1,131 +1,238 @@
-<!DOCTYPE HTML>
-<!--
-	Tessellate by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Dr. Shajul's ENT resources</title>
-    <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="57x57" href="Resources/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="Resources/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="Resources/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="Resources/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="Resources/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="Resources/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="Resources/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="Resources/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="Resources/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="Resources/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Resources/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="Resources/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Resources/favicons/favicon-16x16.png">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <style type="text/css">
-    <!--
-    img.entheader {
-    max-width: 70%;
-    height: auto;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. GS - ENT Resources</title>
+  <meta name="description" content="ENT learning resources by Dr Shajul George, Kottayam Medical College. Anatomy, CT Scan and clinical topics in Otorhinolaryngology (ENT) like CT Scan PNS, CT Scan Temporal bone etc in a mobile friendly way">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://doctorlife.in/ENT/">
+  <link rel="stylesheet" href="inc/css/doctorlife.css?version=1">
+  <style>
+    div.entlogo {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 10px 0;
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
     }
-    //-->
-    </style>
-	</head>
-	<body>
+    div.polaroid {
+      flex: 0 1 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+    }
+    #body .sitetitle {
+      font-size: 2.5em; 
+      text-align: center;
+      text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);;
+      color: #303F9F;
+    }
+    div.polaroid img {
+      width: 100%;
+      filter: invert(27%) sepia(11%) saturate(4901%) hue-rotate(201deg) brightness(97%) contrast(105%);  /* Color #303F9F */
+    }
+    div.subtitle p{
+      text-align: center;
+      padding: 0px 10px;
+      font-size: 1.2em; 
+      color: #333;
+     }
+     div.contentflex {
+       width: 100%;
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: space-evenly;
+       padding: 0 10px;
+     }
+     div.contentflex .contentcard {
+      flex-grow: 1;
+      border: 1px solid #303F9F;
+      margin: 10px;
+      padding: 0 10px;
+      padding-bottom: 10px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      justify-items: center;
+     }
+     .contentcard h3 {text-align: center; margin: 10px auto;}
+     .contentcard a {
+       display: block;
+       text-decoration: none;
+       cursor: pointer;
+       padding: 10px 0;
+     }
+     .contentcard a:link,a:visited {
+       color: #263238;
+     }
+     .contentcard a:hover,a:active {
+       color: #303F9F;
+       text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+     }
+     .contentlinks {
+       margin: auto;
+       width: max-content;
+       line-height: 1.2 em;
+     }
+     @media only screen and (max-width: 639px) {
+      div.contentflex .contentcard {
+        margin: 10px 5px;
+      }
+      div.contentflex {
+       padding: 0 10px;
+      }
+      .contentcard a {
+       padding: 0.8em 0;
+      }
+     }
+       
 
-		<!-- Header -->
-			<section id="header" class="dark">
-				<header>
-          <img class="entheader" src="Resources/ent.png" alt="ENT" title="ENT" align="middle">
-          <h1>ENT Resources</h1>
-					<p>Just a personal collection of ENT learning resources!</p>
-				</header>
-				<footer>
-					<a href="#first" class="button scrolly">Proceed</a>
-				</footer>
-			</section>
+  </style>
+</head>
+<body>
+<!-- Navbar Code -->
+<div id="header">
+  <div id="navtopline"></div>
+  <nav id="topnav">
+    <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+    <a class="links" href="about.html">About</a>
+    <!-- ENABLE FOR DROP-DOWN MENU 
+      <div class="dropdown-menu">
+        <button class="menu-btn">Open ></button>
+          <div class="menu-content">
+              <a class="links-hidden" href="#">Contact Us</a>
+              <a class="links-hidden" href="#">Visit Us</a>
+              <a class="links-hidden" href="#">About Us</a>
+          </div>
+      </div>
+      -->
+    <a class="hamburger float-right">&#9776;</a>
+  </nav>
+</div>
 
-		<!-- First -->
-			<section id="first" class="main">
-				<header>
-					<div class="container">
-						<h2>Please note:</h2>
-						<p>The links marked as "Desktop" are best viewed with a compatible browser on desktop!</p>
-					</div>
-				</header>
-				<div class="content dark style1 featured">
-					<div class="container">
-						<div class="row">
-							<div class="4u 12u(narrow)">
-								<section>
-									
-									<header>
-										<h3>Ear</h3>
-									</header>
-									<p>
-                  
-                    <a href="easy_lateral_ear.htm" title="Easy Lateral Ear Anatomy">Easy Ear Anatomy</a><br />
-  <a href="easy_mcf_ear.htm" title="Easy MCF Ear Anatomy">Easy MCF Ear Anatomy</a><br />
-<a href="CT_Temporal_bone.htm">CT Temporal Bone 1</a><br />
-<a href="CT_Temporal.htm">CT Temporal Bone 2</a><br />  
-<a href="CT_Temporal_1.htm">CT Temporal Bone 3</a><br />
-<a href="CT_Middle_Ear.htm">CT Middle Ear</a><br />
-<a href="CT_Skull_foramina.htm">CT Skull Foramina</a><br />
-<a href="normal_t-bone_ct.htm">Normal Temporal Bone<a> (Desktop)<br />
-<a href="petrous_bone_anatomy.htm">Petrous bone anatomy (Desktop)</a><br />
+<style>
+/* The Close Button */
+.modal-close {
+  color: #999;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1em;
+}
 
-                  </p>
-								</section>
-							</div>
-							<div class="4u 12u(narrow)">
-								<section>
-									
-									<header>
-										<h3>Nose</h3>
-									</header>
-									<p>
-                  
-                  <a href="Sinus_CT.htm">CT Paranasal Sinus (Desktop)</a>
-                  
-                  </p>
-								</section>
-							</div>
-							<div class="4u 12u(narrow)">
-								<section>
-									
-									<header>
-										<h3>Throat</h3>
-									</header>
-									<p>&nbsp;</p>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+  <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+  <div style="flex: 0 0 160px; padding: 0">
+    <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+      <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+    </a>
+  </div>
+  <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+</div>
 
+<script>
+  var x = document.getElementsByTagName("nav")[0];
 
-		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="drshajul@gmail.com" class="icon fa-envelope"><span class="label">Twitter</span></a></li>
-					<li><a href="http://shajul.github.io" class="icon fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</section>
+  function toggleNav() {
+    if (x.className === "") {
+      x.className = " openNav";
+    } else {
+      x.className = "";
+    }
+  }
+  document.querySelector(".hamburger").addEventListener("click", toggleNav);
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+  // scrolling effects
+  let navtopline = document.getElementById("navtopline");
+  let topnav = document.querySelector("nav#topnav");
 
-	</body>
+  window.onscroll = function() {
+
+    if (document.documentElement.scrollTop < 5) {
+      navtopline.style = "height: 5px;";
+      topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+    } else {
+      navtopline.style = "height: 1px;";
+      topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+    }
+
+  };
+
+  // Notice functionality
+  if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+    document.querySelector('div#notice').style.display = "flex";
+  }
+  function closeNotice() {
+    document.querySelector('div#notice').style.display = "none";
+    sessionStorage.setItem("noticed","1");
+  }
+
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+  }
+</script>
+<!-- Navbar End-->
+<div id="body">
+  <div class="entlogo">
+    <div class="polaroid"><img src="images/ear.png" alt="Ear"></div>
+    <div class="polaroid"><img src="images/nose.png" alt="Nose"></div>
+    <div class="polaroid"><img src="images/throat.png" alt="Throat"></div>
+  </div>
+  <div class="title sitetitle">ENT Resources</div>
+  <div class="subtitle"><p>A collection of my ENT teaching material!</p></div>
+  <div class="contentflex">
+    <div class="contentcard"><h3>EAR</h3>
+      <div class="contentlinks">
+        <a href="easy_lateral_ear.html" target="_blank">Easy Ear Anatomy</a>
+        <a href="ct_temporal_play.html" target="_blank">Easy Ear CT Scan</a>
+        <a href="ct_skull_foramina.html" target="_blank">CT - Skull Base Foramina</a>
+        <a href="ct_temporal_axial.html" target="_blank">Easy Ear CT Scan (Print Layout)</a>
+        <a href="easy_mcf_ear.html" target="_blank">Easy MCF Ear Anatomy</a>
+      </div>
+    </div>
+    <div class="contentcard"><h3>NOSE</h3>
+      <div class="contentlinks">
+        <a href="ct_pns.html" target="_blank">Easy CT PNS</a>
+        <a href="ct_pns_play.html" target="_blank">Easy CT PNS (Old)</a>
+        <a href="ct_pns_coronal.html" target="_blank">Easy CT PNS (Coronal, Print Layout)</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="footer">
+  <div class="fa-social">
+    <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+    <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+    <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+    <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>   
+  <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+  
+</div>
+</body>
 </html>

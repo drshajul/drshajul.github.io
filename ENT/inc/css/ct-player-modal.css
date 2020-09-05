@@ -1,0 +1,161 @@
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: transparent;
+  margin: auto;
+  padding: 0;
+  /* border: 1px solid #888; */
+  width: 400px;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.myModalLink {
+  color: darkblue;
+}
+
+.myModalLink:hover {
+  cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.modal-close {
+  color: #ccc;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  color: #eee;
+  padding: 2px 10px;
+  background-color: transparent;
+}
+
+.modal-body {
+  display: block;
+  height: 300px;
+  padding: 2px 10px;
+  color: #ededed;
+  margin:auto;
+  text-align: center;
+}
+
+.modal-footer {
+  padding: 2px 10px;
+  background-color: #ddd;
+}
+
+/* Spinner */
+@keyframes myspinner-in {
+  0% { transform: translate(6px,40px) scale(0); }
+ 25% { transform: translate(6px,40px) scale(0); }
+ 50% { transform: translate(6px,40px) scale(1); }
+ 75% { transform: translate(40px,40px) scale(1); }
+100% { transform: translate(74px,40px) scale(1); }
+}
+@keyframes myspinner-in-r {
+  0% { transform: translate(74px,40px) scale(1); }
+100% { transform: translate(74px,40px) scale(0); }
+}
+@keyframes myspinner-in-c {
+  0% { background: #0051a2 }
+ 25% { background: #89bff8 }
+ 50% { background: #408ee0 }
+ 75% { background: #1b75be }
+100% { background: #0051a2 }
+}
+.myspinner-in div {
+ position: absolute;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ transform: translate(40px,40px) scale(1);
+ background: #0051a2;
+ animation: myspinner-in 2s infinite cubic-bezier(0,0.5,0.5,1);
+}
+.myspinner-in div:nth-child(1) {
+ background: #1b75be;
+ transform: translate(74px,40px) scale(1);
+ animation: myspinner-in-r 0.5s infinite cubic-bezier(0,0.5,0.5,1), myspinner-in-c 2s infinite step-start;
+}.myspinner-in div:nth-child(2) {
+ animation-delay: -0.5s;
+ background: #0051a2;
+}.myspinner-in div:nth-child(3) {
+ animation-delay: -1s;
+ background: #1b75be;
+}.myspinner-in div:nth-child(4) {
+ animation-delay: -1.5s;
+ background: #408ee0;
+}.myspinner-in div:nth-child(5) {
+ animation-delay: -2s;
+ background: #89bff8;
+}
+.myspinner {
+ width: 75px;
+ height: 75px;
+ display: block;
+ overflow: hidden;
+ background:transparent;
+ margin: auto;
+}
+.myspinner-in {
+ width: 100%;
+ height: 100%;
+ position: relative;
+ transform: translateZ(0) scale(0.75);
+ backface-visibility: hidden;
+ transform-origin: 0 0; /* see note above */
+}
+.myspinner-in div { box-sizing: content-box; }
+
+/* Progress bar */
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  position: absolute;
+  bottom: 0;
+  left:0
+}
+
+#myBar {
+  width: 1%;
+  height: 10px;
+  background-color: #1b75be;
+}

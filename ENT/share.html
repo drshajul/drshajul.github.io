@@ -1,0 +1,10 @@
+<?php
+require "inc/Init.php";
+include "../inc/classes/Browser.php";
+$browser = new Browser();
+if($browser->getPlatform() == 'Android') {
+  header('Location: https://play.google.com/store/apps/details?id=doctorlife.ent');
+} else {
+  header('Location: ./');
+}
+?>

@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-control" content="public">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://doctorlife.in/ENT/ct_temporal_play.html">
+  <title>CT Temporal Axial</title>
+  <meta name="description" content="Learn temporal bone CT scan anatomy with ease. Temporal bone axial scan cuts labelled and correlated with the actual dissection specimen images. Both the CT scan images and reference images can be scrolled, so that every depth of dissection is easy to understand.">
+  <link rel="stylesheet" href="inc/css/doctorlife.css?version=1">
+  <script>
+    // Preload code
+    function preloadImages() {
+      var width = 1;
+      var myBar = document.getElementById("myBar");
+      var interval = 100/61;  // 100 by total number of images to preload
+      for (let i = 1; i < 20; i++) {
+        preloadCommon('assets/ct_temporal_axial/labels/' + i,'.png')
+        mymove();
+      }
+      for (let i = 1; i < 30; i++) {
+        preloadCommon('assets/ct_temporal_axial/img' + i,'.jpg')
+        mymove();
+      }
+      for (let i = 1; i < 11; i++) {
+        preloadCommon('assets/ct_temporal_axial/ref/img' + i,'.jpg')
+        mymove();
+      }
+      closeModal(); // at-least load 30 images before showing
+      for (let i = 31; i < 106; i++) {
+        preloadCommon('assets/ct_temporal_axial/img' + i,'.jpg')
+      }  
+      function mymove() {
+        width = Math.round(width+interval);
+        if (width > 100) return;
+        myBar.style.width = width + '%';
+      }
+      function preloadCommon(ipath,iext) {
+        var preloadLink = document.createElement("link");
+        preloadLink.href = ipath + ((canUseWebP()) ? ".webp" : iext);
+        preloadLink.rel = "preload";
+        preloadLink.as = "image";
+        document.head.appendChild(preloadLink);
+      }    
+    }
+    function toggleFullScreen(elem) {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        elem.innerHTML = "&#xf066;";
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen(); 
+          elem.innerHTML = "&#xf0b2;";
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="inc/css/ct_temporal_player.css">
+  <link rel="stylesheet" href="inc/css/ct-player-modal.css">
+</head>
+
+<body onload="preloadImages();" style="min-height: 100%;">
+
+<!-- Navbar Code -->
+<div id="header">
+  <div id="navtopline"></div>
+  <nav id="topnav">
+    <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+    <a class="links" href="about.html">About</a>
+    <!-- ENABLE FOR DROP-DOWN MENU 
+      <div class="dropdown-menu">
+        <button class="menu-btn">Open ></button>
+          <div class="menu-content">
+              <a class="links-hidden" href="#">Contact Us</a>
+              <a class="links-hidden" href="#">Visit Us</a>
+              <a class="links-hidden" href="#">About Us</a>
+          </div>
+      </div>
+      -->
+    <a class="hamburger float-right">&#9776;</a>
+  </nav>
+</div>
+
+<style>
+/* The Close Button */
+.modal-close {
+  color: #999;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1em;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+  <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+  <div style="flex: 0 0 160px; padding: 0">
+    <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+      <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+    </a>
+  </div>
+  <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+</div>
+
+<script>
+  var x = document.getElementsByTagName("nav")[0];
+
+  function toggleNav() {
+    if (x.className === "") {
+      x.className = " openNav";
+    } else {
+      x.className = "";
+    }
+  }
+  document.querySelector(".hamburger").addEventListener("click", toggleNav);
+
+  // scrolling effects
+  let navtopline = document.getElementById("navtopline");
+  let topnav = document.querySelector("nav#topnav");
+
+  window.onscroll = function() {
+
+    if (document.documentElement.scrollTop < 5) {
+      navtopline.style = "height: 5px;";
+      topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+    } else {
+      navtopline.style = "height: 1px;";
+      topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+    }
+
+  };
+
+  // Notice functionality
+  if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+    document.querySelector('div#notice').style.display = "flex";
+  }
+  function closeNotice() {
+    document.querySelector('div#notice').style.display = "none";
+    sessionStorage.setItem("noticed","1");
+  }
+
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+  }
+</script>
+<!-- Navbar End-->
+
+    <div id="body">
+
+      <div class="title" style="text-align: center;"><span>CT Temporal Bone Axial</span></div>
+      
+      <div id="ct-container">
+        <div class="gallery left">
+
+          <div id="reference">
+            <picture id="refImg">
+              <source type="image/webp" srcset="assets/ct_temporal_axial/ref/img4.webp">
+              <source type="image/jpeg" srcset="assets/ct_temporal_axial/ref/img4.jpg">
+              <img src="assets/ct_temporal_axial/ref/img4.jpg" alt="Surgical view">
+            </picture>
+            <button id="morebutton" class="lessmore">&#9655;</button>
+            <button id="lessbutton" class="lessmore">&#9665;</button> 
+            <button id="sagplus" class="plusminus">&#9651;</button>
+            <button id="sagminus" class="plusminus">&#9661;</button>
+            <button id="expand" class="fa toggles" onclick='window.open("easy_lateral_ear.html","_blank")'>&#xf35d;</button>
+            <button id="fullscreen" class="fa toggles" onclick="toggleFullScreen(this)">&#xf0b2;</button>
+            <input type="range" name="sagital" id="sagital" min="1" max="105" value="1" class="slider" oninput="changeImageById(this.value)">
+          </div>
+
+          <div id="vline"></div>
+
+        </div>
+        <div id="seriesDiv" class="gallery right" onclick="showLabel(this)">
+          <picture id="seriesImg">
+            <source type="image/webp" srcset="assets/ct_temporal_axial/img1.webp">
+            <source type="image/jpeg" srcset="assets/ct_temporal_axial/img1.jpg">
+            <img src="assets/ct_temporal_axial/img1.jpg" alt="Axial CT Temporal Bone Slice">
+          </picture>
+          <picture id="seriesLab">
+              <source type="image/webp" srcset="assets/ct_temporal_axial/labels/1.webp">
+              <source type="image/png" srcset="assets/ct_temporal_axial/labels/1.png">
+              <img src="assets/ct_temporal_axial/labels/1.png">
+          </picture>
+        </div>
+
+      </div>
+      <div id="tooltip">
+        Click any image for labels. <span class="desktop">You can use the mouse wheel to scroll through the images of both the sagital and coronal series.</span>
+      </div>
+
+      <script src="inc/js/ct_temporal_player.js"></script>
+
+    </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <div class="myspinner"><div class="myspinner-in">
+        <div></div><div></div><div></div><div></div><div></div>
+      </div></div>
+      <div>
+        <h4>
+          Kindly wait while content is loading..
+        </h4>
+      </div>
+      <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var modal = document.querySelector('#myModal');
+modal.style.display = "block";
+function showModal() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+function canUseWebP() {
+    var elem = document.createElement('canvas');
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+    // very old browser like IE 8, canvas not supported
+    return false;
+}
+</script>
+<div id="footer">
+  <div class="fa-social">
+    <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+    <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+    <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+    <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>   
+  <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+  
+</div>
+</body>
+
+</html>

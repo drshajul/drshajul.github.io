@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-control" content="public">
+  <link rel="canonical" href="https://doctorlife.in/ENT/">
+  <title>CT PNS Coronal</title>
+  <link rel="stylesheet" href="inc/css/doctorlife.css?version=1">
+  <style>
+    div#gallerycontainer {
+      background-color: #333;
+    }
+    div.tooltip {
+      color: #ddd;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0px;
+      padding: 2px;
+      text-align: center;
+    }
+    div.gallery {
+      position: relative;
+      border: solid #333;
+      border-width: 0 1px;
+    }
+    
+    div.gallery:hover {
+      border: solid #777;
+      border-width: 0 1px;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      max-width: 613px;
+      min-width: 400px;
+      height: auto;
+    }
+
+    div.image-tooltip {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      color: #ddd;
+    }
+    
+    .responsive {
+      float: left;
+      width: 33.33333%; /* maximum 3 columns */
+      background-color: #333;
+    }
+    
+    @media only screen and (max-width: 1200px) {
+      .responsive {
+        width: 49.99999%;
+      }
+    } 
+    
+    
+    @media only screen and (max-width: 900px) {
+      .responsive {
+        width: 100%;
+      }
+    }
+    
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .display-bottomright {text-align: right; padding-top: 2em;}
+    .small {font-size:12px!important}
+
+    .series-lab {
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .tooltip a {
+      color: lightgreen;
+    }
+  </style>
+  <script>  // Preload code
+    function preloadImages() {
+      for (let i = 1; i < 106; i++) {
+        var preloadLink = document.createElement("link");
+        preloadLink.href = "assets/pns_coronal/img" + i + ((canUseWebP()) ? ".png" : ".jpg");
+        preloadLink.rel = "preload";
+        preloadLink.as = "image";
+        document.head.appendChild(preloadLink);  
+      }
+    }
+  </script>
+</head>
+<body onload="preloadImages();">
+<!-- Navbar Code -->
+<div id="header">
+  <div id="navtopline"></div>
+  <nav id="topnav">
+    <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+    <a class="links" href="about.html">About</a>
+    <!-- ENABLE FOR DROP-DOWN MENU 
+      <div class="dropdown-menu">
+        <button class="menu-btn">Open ></button>
+          <div class="menu-content">
+              <a class="links-hidden" href="#">Contact Us</a>
+              <a class="links-hidden" href="#">Visit Us</a>
+              <a class="links-hidden" href="#">About Us</a>
+          </div>
+      </div>
+      -->
+    <a class="hamburger float-right">&#9776;</a>
+  </nav>
+</div>
+
+<style>
+/* The Close Button */
+.modal-close {
+  color: #999;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1em;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+  <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+  <div style="flex: 0 0 160px; padding: 0">
+    <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+      <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+    </a>
+  </div>
+  <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+</div>
+
+<script>
+  var x = document.getElementsByTagName("nav")[0];
+
+  function toggleNav() {
+    if (x.className === "") {
+      x.className = " openNav";
+    } else {
+      x.className = "";
+    }
+  }
+  document.querySelector(".hamburger").addEventListener("click", toggleNav);
+
+  // scrolling effects
+  let navtopline = document.getElementById("navtopline");
+  let topnav = document.querySelector("nav#topnav");
+
+  window.onscroll = function() {
+
+    if (document.documentElement.scrollTop < 5) {
+      navtopline.style = "height: 5px;";
+      topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+    } else {
+      navtopline.style = "height: 1px;";
+      topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+    }
+
+  };
+
+  // Notice functionality
+  if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+    document.querySelector('div#notice').style.display = "flex";
+  }
+  function closeNotice() {
+    document.querySelector('div#notice').style.display = "none";
+    sessionStorage.setItem("noticed","1");
+  }
+
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+  }
+</script>
+<!-- Navbar End-->
+<div id="body">
+
+<div id="gallerycontainer">
+
+  <div class="tooltip">Click any image for labels. 
+  </div>
+  <div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img1.jpg" id="1">
+    <img src="assets/pns_coronal/labels/1.png" alt="CT PNS Coronal Slice 1" class="series-lab" hidden="">
+    <div class="image-tooltip">001</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img2.jpg" id="2">
+    <img src="assets/pns_coronal/labels/1.png" alt="CT PNS Coronal Slice 2" class="series-lab" hidden="">
+    <div class="image-tooltip">002</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img3.jpg" id="3">
+    <img src="assets/pns_coronal/labels/1.png" alt="CT PNS Coronal Slice 3" class="series-lab" hidden="">
+    <div class="image-tooltip">003</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img4.jpg" id="4">
+    <img src="assets/pns_coronal/labels/1.png" alt="CT PNS Coronal Slice 4" class="series-lab" hidden="">
+    <div class="image-tooltip">004</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img5.jpg" id="5">
+    <img src="assets/pns_coronal/labels/1.png" alt="CT PNS Coronal Slice 5" class="series-lab" hidden="">
+    <div class="image-tooltip">005</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img6.jpg" id="6">
+    <img src="assets/pns_coronal/labels/2.png" alt="CT PNS Coronal Slice 6" class="series-lab" hidden="">
+    <div class="image-tooltip">006</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img7.jpg" id="7">
+    <img src="assets/pns_coronal/labels/2.png" alt="CT PNS Coronal Slice 7" class="series-lab" hidden="">
+    <div class="image-tooltip">007</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img8.jpg" id="8">
+    <img src="assets/pns_coronal/labels/3.png" alt="CT PNS Coronal Slice 8" class="series-lab" hidden="">
+    <div class="image-tooltip">008</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img9.jpg" id="9">
+    <img src="assets/pns_coronal/labels/3.png" alt="CT PNS Coronal Slice 9" class="series-lab" hidden="">
+    <div class="image-tooltip">009</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img10.jpg" id="10">
+    <img src="assets/pns_coronal/labels/3.png" alt="CT PNS Coronal Slice 10" class="series-lab" hidden="">
+    <div class="image-tooltip">010</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img11.jpg" id="11">
+    <img src="assets/pns_coronal/labels/3.png" alt="CT PNS Coronal Slice 11" class="series-lab" hidden="">
+    <div class="image-tooltip">011</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img12.jpg" id="12">
+    <img src="assets/pns_coronal/labels/3.png" alt="CT PNS Coronal Slice 12" class="series-lab" hidden="">
+    <div class="image-tooltip">012</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img13.jpg" id="13">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 13" class="series-lab" hidden="">
+    <div class="image-tooltip">013</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img14.jpg" id="14">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 14" class="series-lab" hidden="">
+    <div class="image-tooltip">014</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img15.jpg" id="15">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 15" class="series-lab" hidden="">
+    <div class="image-tooltip">015</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img16.jpg" id="16">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 16" class="series-lab" hidden="">
+    <div class="image-tooltip">016</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img17.jpg" id="17">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 17" class="series-lab" hidden="">
+    <div class="image-tooltip">017</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img18.jpg" id="18">
+    <img src="assets/pns_coronal/labels/4.png" alt="CT PNS Coronal Slice 18" class="series-lab" hidden="">
+    <div class="image-tooltip">018</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img19.jpg" id="19">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 19" class="series-lab" hidden="">
+    <div class="image-tooltip">019</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img20.jpg" id="20">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 20" class="series-lab" hidden="">
+    <div class="image-tooltip">020</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img21.jpg" id="21">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 21" class="series-lab" hidden="">
+    <div class="image-tooltip">021</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img22.jpg" id="22">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 22" class="series-lab" hidden="">
+    <div class="image-tooltip">022</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img23.jpg" id="23">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 23" class="series-lab" hidden="">
+    <div class="image-tooltip">023</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img24.jpg" id="24">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 24" class="series-lab" hidden="">
+    <div class="image-tooltip">024</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img25.jpg" id="25">
+    <img src="assets/pns_coronal/labels/5.png" alt="CT PNS Coronal Slice 25" class="series-lab" hidden="">
+    <div class="image-tooltip">025</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img26.jpg" id="26">
+    <img src="assets/pns_coronal/labels/6.png" alt="CT PNS Coronal Slice 26" class="series-lab" hidden="">
+    <div class="image-tooltip">026</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img27.jpg" id="27">
+    <img src="assets/pns_coronal/labels/6.png" alt="CT PNS Coronal Slice 27" class="series-lab" hidden="">
+    <div class="image-tooltip">027</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img28.jpg" id="28">
+    <img src="assets/pns_coronal/labels/6.png" alt="CT PNS Coronal Slice 28" class="series-lab" hidden="">
+    <div class="image-tooltip">028</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img29.jpg" id="29">
+    <img src="assets/pns_coronal/labels/7.png" alt="CT PNS Coronal Slice 29" class="series-lab" hidden="">
+    <div class="image-tooltip">029</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img30.jpg" id="30">
+    <img src="assets/pns_coronal/labels/7.png" alt="CT PNS Coronal Slice 30" class="series-lab" hidden="">
+    <div class="image-tooltip">030</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img31.jpg" id="31">
+    <img src="assets/pns_coronal/labels/7.png" alt="CT PNS Coronal Slice 31" class="series-lab" hidden="">
+    <div class="image-tooltip">031</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img32.jpg" id="32">
+    <img src="assets/pns_coronal/labels/7.png" alt="CT PNS Coronal Slice 32" class="series-lab" hidden="">
+    <div class="image-tooltip">032</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img33.jpg" id="33">
+    <img src="assets/pns_coronal/labels/8.png" alt="CT PNS Coronal Slice 33" class="series-lab" hidden="">
+    <div class="image-tooltip">033</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img34.jpg" id="34">
+    <img src="assets/pns_coronal/labels/8.png" alt="CT PNS Coronal Slice 34" class="series-lab" hidden="">
+    <div class="image-tooltip">034</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img35.jpg" id="35">
+    <img src="assets/pns_coronal/labels/8.png" alt="CT PNS Coronal Slice 35" class="series-lab" hidden="">
+    <div class="image-tooltip">035</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img36.jpg" id="36">
+    <img src="assets/pns_coronal/labels/9.png" alt="CT PNS Coronal Slice 36" class="series-lab" hidden="">
+    <div class="image-tooltip">036</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img37.jpg" id="37">
+    <img src="assets/pns_coronal/labels/9.png" alt="CT PNS Coronal Slice 37" class="series-lab" hidden="">
+    <div class="image-tooltip">037</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img38.jpg" id="38">
+    <img src="assets/pns_coronal/labels/9.png" alt="CT PNS Coronal Slice 38" class="series-lab" hidden="">
+    <div class="image-tooltip">038</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img39.jpg" id="39">
+    <img src="assets/pns_coronal/labels/10.png" alt="CT PNS Coronal Slice 39" class="series-lab" hidden="">
+    <div class="image-tooltip">039</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img40.jpg" id="40">
+    <img src="assets/pns_coronal/labels/10.png" alt="CT PNS Coronal Slice 40" class="series-lab" hidden="">
+    <div class="image-tooltip">040</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img41.jpg" id="41">
+    <img src="assets/pns_coronal/labels/11.png" alt="CT PNS Coronal Slice 41" class="series-lab" hidden="">
+    <div class="image-tooltip">041</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img42.jpg" id="42">
+    <img src="assets/pns_coronal/labels/11.png" alt="CT PNS Coronal Slice 42" class="series-lab" hidden="">
+    <div class="image-tooltip">042</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img43.jpg" id="43">
+    <img src="assets/pns_coronal/labels/11.png" alt="CT PNS Coronal Slice 43" class="series-lab" hidden="">
+    <div class="image-tooltip">043</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img44.jpg" id="44">
+    <img src="assets/pns_coronal/labels/11.png" alt="CT PNS Coronal Slice 44" class="series-lab" hidden="">
+    <div class="image-tooltip">044</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img45.jpg" id="45">
+    <img src="assets/pns_coronal/labels/12.png" alt="CT PNS Coronal Slice 45" class="series-lab" hidden="">
+    <div class="image-tooltip">045</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img46.jpg" id="46">
+    <img src="assets/pns_coronal/labels/12.png" alt="CT PNS Coronal Slice 46" class="series-lab" hidden="">
+    <div class="image-tooltip">046</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img47.jpg" id="47">
+    <img src="assets/pns_coronal/labels/12.png" alt="CT PNS Coronal Slice 47" class="series-lab" hidden="">
+    <div class="image-tooltip">047</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img48.jpg" id="48">
+    <img src="assets/pns_coronal/labels/12.png" alt="CT PNS Coronal Slice 48" class="series-lab" hidden="">
+    <div class="image-tooltip">048</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img49.jpg" id="49">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 49" class="series-lab" hidden="">
+    <div class="image-tooltip">049</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img50.jpg" id="50">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 50" class="series-lab" hidden="">
+    <div class="image-tooltip">050</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img51.jpg" id="51">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 51" class="series-lab" hidden="">
+    <div class="image-tooltip">051</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img52.jpg" id="52">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 52" class="series-lab" hidden="">
+    <div class="image-tooltip">052</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img53.jpg" id="53">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 53" class="series-lab" hidden="">
+    <div class="image-tooltip">053</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img54.jpg" id="54">
+    <img src="assets/pns_coronal/labels/13.png" alt="CT PNS Coronal Slice 54" class="series-lab" hidden="">
+    <div class="image-tooltip">054</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img55.jpg" id="55">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 55" class="series-lab" hidden="">
+    <div class="image-tooltip">055</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img56.jpg" id="56">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 56" class="series-lab" hidden="">
+    <div class="image-tooltip">056</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img57.jpg" id="57">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 57" class="series-lab" hidden="">
+    <div class="image-tooltip">057</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img58.jpg" id="58">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 58" class="series-lab" hidden="">
+    <div class="image-tooltip">058</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img59.jpg" id="59">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 59" class="series-lab" hidden="">
+    <div class="image-tooltip">059</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img60.jpg" id="60">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 60" class="series-lab" hidden="">
+    <div class="image-tooltip">060</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img61.jpg" id="61">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 61" class="series-lab" hidden="">
+    <div class="image-tooltip">061</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img62.jpg" id="62">
+    <img src="assets/pns_coronal/labels/14.png" alt="CT PNS Coronal Slice 62" class="series-lab" hidden="">
+    <div class="image-tooltip">062</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img63.jpg" id="63">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 63" class="series-lab" hidden="">
+    <div class="image-tooltip">063</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img64.jpg" id="64">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 64" class="series-lab" hidden="">
+    <div class="image-tooltip">064</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img65.jpg" id="65">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 65" class="series-lab" hidden="">
+    <div class="image-tooltip">065</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img66.jpg" id="66">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 66" class="series-lab" hidden="">
+    <div class="image-tooltip">066</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img67.jpg" id="67">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 67" class="series-lab" hidden="">
+    <div class="image-tooltip">067</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img68.jpg" id="68">
+    <img src="assets/pns_coronal/labels/15.png" alt="CT PNS Coronal Slice 68" class="series-lab" hidden="">
+    <div class="image-tooltip">068</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img69.jpg" id="69">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 69" class="series-lab" hidden="">
+    <div class="image-tooltip">069</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img70.jpg" id="70">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 70" class="series-lab" hidden="">
+    <div class="image-tooltip">070</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img71.jpg" id="71">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 71" class="series-lab" hidden="">
+    <div class="image-tooltip">071</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img72.jpg" id="72">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 72" class="series-lab" hidden="">
+    <div class="image-tooltip">072</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img73.jpg" id="73">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 73" class="series-lab" hidden="">
+    <div class="image-tooltip">073</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img74.jpg" id="74">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 74" class="series-lab" hidden="">
+    <div class="image-tooltip">074</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img75.jpg" id="75">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 75" class="series-lab" hidden="">
+    <div class="image-tooltip">075</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img76.jpg" id="76">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 76" class="series-lab" hidden="">
+    <div class="image-tooltip">076</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img77.jpg" id="77">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 77" class="series-lab" hidden="">
+    <div class="image-tooltip">077</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img78.jpg" id="78">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 78" class="series-lab" hidden="">
+    <div class="image-tooltip">078</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img79.jpg" id="79">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 79" class="series-lab" hidden="">
+    <div class="image-tooltip">079</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img80.jpg" id="80">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 80" class="series-lab" hidden="">
+    <div class="image-tooltip">080</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img81.jpg" id="81">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 81" class="series-lab" hidden="">
+    <div class="image-tooltip">081</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img82.jpg" id="82">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 82" class="series-lab" hidden="">
+    <div class="image-tooltip">082</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img83.jpg" id="83">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 83" class="series-lab" hidden="">
+    <div class="image-tooltip">083</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img84.jpg" id="84">
+    <img src="assets/pns_coronal/labels/16.png" alt="CT PNS Coronal Slice 84" class="series-lab" hidden="">
+    <div class="image-tooltip">084</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img85.jpg" id="85">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 85" class="series-lab" hidden="">
+    <div class="image-tooltip">085</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img86.jpg" id="86">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 86" class="series-lab" hidden="">
+    <div class="image-tooltip">086</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img87.jpg" id="87">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 87" class="series-lab" hidden="">
+    <div class="image-tooltip">087</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img88.jpg" id="88">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 88" class="series-lab" hidden="">
+    <div class="image-tooltip">088</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img89.jpg" id="89">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 89" class="series-lab" hidden="">
+    <div class="image-tooltip">089</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img90.jpg" id="90">
+    <img src="assets/pns_coronal/labels/17.png" alt="CT PNS Coronal Slice 90" class="series-lab" hidden="">
+    <div class="image-tooltip">090</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img91.jpg" id="91">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 91" class="series-lab" hidden="">
+    <div class="image-tooltip">091</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img92.jpg" id="92">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 92" class="series-lab" hidden="">
+    <div class="image-tooltip">092</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img93.jpg" id="93">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 93" class="series-lab" hidden="">
+    <div class="image-tooltip">093</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img94.jpg" id="94">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 94" class="series-lab" hidden="">
+    <div class="image-tooltip">094</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img95.jpg" id="95">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 95" class="series-lab" hidden="">
+    <div class="image-tooltip">095</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img96.jpg" id="96">
+    <img src="assets/pns_coronal/labels/18.png" alt="CT PNS Coronal Slice 96" class="series-lab" hidden="">
+    <div class="image-tooltip">096</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img97.jpg" id="97">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 97" class="series-lab" hidden="">
+    <div class="image-tooltip">097</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img98.jpg" id="98">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 98" class="series-lab" hidden="">
+    <div class="image-tooltip">098</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img99.jpg" id="99">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 99" class="series-lab" hidden="">
+    <div class="image-tooltip">099</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img100.jpg" id="100">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 100" class="series-lab" hidden="">
+    <div class="image-tooltip">100</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img101.jpg" id="101">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 101" class="series-lab" hidden="">
+    <div class="image-tooltip">101</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img102.jpg" id="102">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 102" class="series-lab" hidden="">
+    <div class="image-tooltip">102</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img103.jpg" id="103">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 103" class="series-lab" hidden="">
+    <div class="image-tooltip">103</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img104.jpg" id="104">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 104" class="series-lab" hidden="">
+    <div class="image-tooltip">104</div>
+    </div>
+  </div><div class="responsive">
+    <div class="gallery" onclick="showLabel(this)">
+    <img src="assets/pns_coronal/img105.jpg" id="105">
+    <img src="assets/pns_coronal/labels/19.png" alt="CT PNS Coronal Slice 105" class="series-lab" hidden="">
+    <div class="image-tooltip">105</div>
+    </div>
+  </div>
+  <div class="display-bottomright">
+    <p class="small" style="color: #999;">&nbsp;</p>
+  </div>
+
+</div>
+</div>
+
+
+<script>
+  const labelR = [5, 7, 12, 18, 25, 28, 32, 35, 38, 40, 44, 48, 54, 62, 68, 84, 90, 96, 105]; //array of labels (total 19)
+
+  function getLabelID(id) {
+    for (let i = 0; i < labelR.length; i++) {
+      if (id <= labelR[i]) {
+        return i+1;
+      }
+    }
+  }
+  function showLabel(obj) {
+  // var id = obj.children[0].src.match(/.*img(\d+)\.jpg/)[1];
+  // labelImg.src = "assets/pns_coronal/labels/" + getLabelID(id) + ".png";
+  if(obj.children[1].hidden)
+    obj.children[1].hidden = false;
+  else
+    obj.children[1].hidden = true;
+    
+  }
+function canUseWebP() {
+    var elem = document.createElement('canvas');
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+    // very old browser like IE 8, canvas not supported
+    return false;
+}
+</script>
+<div id="footer">
+  <div class="fa-social">
+    <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+    <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+    <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+    <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>   
+  <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+  
+</div>
+</body>
+</html>

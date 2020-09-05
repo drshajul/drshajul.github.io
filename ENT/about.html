@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Shajul's ENT Resources</title>
+  <link rel="stylesheet" href="inc/css/doctorlife.css?version=1">
+  <style>
+    div.contentflex {
+      position: relative;
+       width: 100%;
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: space-evenly;
+       padding: 0 10px;
+     }
+     div.contentflex .contentcard {
+      flex-grow: 1;
+      margin: 20px;
+      padding: 0 20px;
+      padding-bottom: 20px;
+      padding-top: 100px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      justify-items: center;
+      width: 80%;
+      max-width: 960px;
+     }
+     .contentcard h3 {text-align: center; margin: 10px auto;}
+     .contentcard a {
+       display: block;
+       text-decoration: none;
+       cursor: pointer;
+       padding: 10px 0;
+     }
+     .contentcard a:link,a:visited {
+       color: #263238;
+     }
+     .contentcard a:hover,a:active {
+       color: #303F9F;
+       text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+     }
+     .contentlinks {
+       margin: auto;
+       line-height: 1.2 em;
+     }
+
+     div.profile {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      position: absolute;
+      top: -100px;
+      margin: auto;
+      z-index: 9;
+      box-shadow: 0 3px 5px 0 rgba(0,0,0,.2), 0 3px 10px 0 rgba(0,0,0,.2);
+      }
+      div.profile > img {
+        border-radius: 50%;
+        border: 3px solid white;
+      }
+      #bodyhead {
+      height: 200px;
+      background-color: #2a2a33;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      padding-top: .5em;
+      }
+      #bodyhead h1 {
+        color: #fff;
+        font-size: 2em;
+        font-weight: 400;
+        text-shadow: 2px 2px 2px rgba(0,0,0,.29);
+        text-align: center;
+      }
+      #bodyhead p {
+        color:#fff;
+        font-weight:100;
+        text-shadow:2px 2px 2px rgba(0,0,0,.29);
+        text-align: right;
+        margin-top: -12px;
+      }
+      #headname {
+        margin: auto;
+        width: max-content;
+        position: relative;
+      }
+      #social {
+        padding: 5px 10px;
+        text-align: center;
+        width: max-content;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+      #social a {
+        display: inline-block;
+        height: 44px;
+        width: 44px;
+        padding: 10px;
+        font-size: 24px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid rgba(42, 42, 51, 0.5);
+        border-radius: 50%;
+        color: rgba(42, 42, 51, 0.5);
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-right: 7px;
+      }
+
+      #social a:hover {
+        border: 1px solid rgba(42, 42, 51, 1);
+        color: rgba(42, 42, 51, 1);
+      }
+
+      div.contentcard p {
+        line-height: 1.8em;
+        text-align: justify;
+        padding: 5px 2em;
+        margin: 5px auto;
+        text-indent: 2em;
+      }
+
+      #contact {
+        margin-top: 2em;
+      }
+      #contact a {
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        background: #4CAF50;
+        color: #FFF;
+        padding: 15px;
+        font-size: 15px;
+        width: 300px;
+        margin: auto;
+      }
+
+      #contact a:hover {
+        background: #43A047;
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      @media only screen and (max-width: 639px) {
+      div.contentflex .contentcard {
+        margin: 10px 5px;
+      }
+      div.contentflex {
+       padding: 0 10px;
+      }
+      .contentcard a {
+       padding: 0.8em 0;
+      }
+     }
+
+     @media only screen and (max-width: 420px) {
+        div.contentflex {
+          padding: 0;
+          margin: 0;
+        }
+        div.contentflex .contentcard {
+          width: 100%;
+        }
+        div.contentcard p {
+          padding: 5px 0.5em;
+        }
+        #contact a {
+          width: 100%;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="navtopline"></div>
+    <nav id="topnav">
+      <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+      <a class="links" href="about.html">About</a>
+      <!-- ENABLE FOR DROP-DOWN MENU 
+        <div class="dropdown-menu">
+          <button class="menu-btn">Open ></button>
+            <div class="menu-content">
+                <a class="links-hidden" href="#">Contact Us</a>
+                <a class="links-hidden" href="#">Visit Us</a>
+                <a class="links-hidden" href="#">About Us</a>
+            </div>
+        </div>
+        -->
+      <a class="hamburger float-right">&#9776;</a>
+    </nav>
+  </div>
+  
+  <style>
+  /* The Close Button */
+  .modal-close {
+    color: #999;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 1em;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  </style>
+  <div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+    <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+    <div style="flex: 0 0 160px; padding: 0">
+      <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+        <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+      </a>
+    </div>
+    <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+  </div>
+  
+  <script>
+    var x = document.getElementsByTagName("nav")[0];
+  
+    function toggleNav() {
+      if (x.className === "") {
+        x.className = " openNav";
+      } else {
+        x.className = "";
+      }
+    }
+    document.querySelector(".hamburger").addEventListener("click", toggleNav);
+  
+    // scrolling effects
+    let navtopline = document.getElementById("navtopline");
+    let topnav = document.querySelector("nav#topnav");
+  
+    window.onscroll = function() {
+  
+      if (document.documentElement.scrollTop < 5) {
+        navtopline.style = "height: 5px;";
+        topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+      } else {
+        navtopline.style = "height: 1px;";
+        topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+      }
+  
+    };
+  
+    // Notice functionality
+    if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+      document.querySelector('div#notice').style.display = "flex";
+    }
+    function closeNotice() {
+      document.querySelector('div#notice').style.display = "none";
+      sessionStorage.setItem("noticed","1");
+    }
+  
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+          return "Windows Phone";
+      }
+  
+      if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+  
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+  
+      return "unknown";
+    }
+  </script>
+<script>let noNotice = true /* No notice message in Header*/</script>
+
+<div id="bodyhead">
+  <div id="headname">
+    <h1>Dr. Shajul George</h1>
+    <p>MS ENT</p>
+  </div>
+</div>
+
+<div class="contentflex">
+  <div class="contentcard">
+  <div id="social" class="fa-social">
+    <a href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin"></i></a>
+    <a href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>  
+    <p>Thanks for visiting! I am Dr. Shajul George, a passionate surgeon and technophile, working as an Assistant Professor of Otorhinolaryngology (ENT) in <a href="https://www.kottayammedicalcollege.org/" style='display:inline;'>Govt. Medical College, Kottayam</a>.</p>
+    <p>Otorhinolaryngology & Head and Neck surgeons face one of the most complex anatomy of the human body. Learning - and teaching ENT - I realized that learning resources are few in this area. 
+      I created this site in the hope that modern technology can help us in the quest to learn this complex anatomy and other intricacies of this branch.</p>
+    <p>Great content found elsewhere on the web sometimes are designed for older browsers or the PC, which does not display well on todays mobiles. With that in mind, this site has been created to be mobile friendly and responsive, so where-ever you are, using whichever device, you are good to go.</p>
+    <p>For easy of understanding CT scan anatomy, the content is correlated in two planes, with one serving as a reference. Hence it is much easier to understand the anatomy as we face in the clinical situation. Both the planes can be individually scrolled, so depth is easier to understand.</p>
+    <p>Any feedback is welcome. You can contact me below.</p>
+    <div id="contact"><a href="contact.html">Contact Me</a></div>
+  </div>
+  <div class="profile">
+  
+     <img src="images/Profile.png" alt="Dr. Shajul George, Asst. Professor Otorhinolaryngology (ENT), Government Medical College, Kottayam" width="200px" height="200px">
+  </div>
+</div>
+<div id="footer">
+  <div class="fa-social">
+    <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+    <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+    <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+    <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>   
+  <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+  
+</div>
+</body>
+</html>

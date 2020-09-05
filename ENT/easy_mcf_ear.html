@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-control" content="public">
+  <title>Easy MCF Ear</title>
+  <link rel="stylesheet" href="inc/css/doctorlife.css?version=1">
+  <style>
+    #series {
+      position: relative;
+      margin: auto;
+    }
+    .data,.legend {
+      display: block;
+      width: 49.9999%;
+      max-width: 840px;
+      min-width: 360px;
+      float: left;
+    }
+    .legend {
+      padding: 0 10px;
+    }
+    .data img {
+      width: 100%;
+    }
+    @media only screen and (max-width: 839px) {
+      .data,.legend {
+        width: 100%;
+      }
+    }
+    div.clearfix::after { 
+      content:''; 
+      clear: both;
+      display: table;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar Code -->
+<div id="header">
+  <div id="navtopline"></div>
+  <nav id="topnav">
+    <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+    <a class="links" href="about.html">About</a>
+    <!-- ENABLE FOR DROP-DOWN MENU 
+      <div class="dropdown-menu">
+        <button class="menu-btn">Open ></button>
+          <div class="menu-content">
+              <a class="links-hidden" href="#">Contact Us</a>
+              <a class="links-hidden" href="#">Visit Us</a>
+              <a class="links-hidden" href="#">About Us</a>
+          </div>
+      </div>
+      -->
+    <a class="hamburger float-right">&#9776;</a>
+  </nav>
+</div>
+
+<style>
+/* The Close Button */
+.modal-close {
+  color: #999;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  font-size: 1em;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+<div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+  <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+  <div style="flex: 0 0 160px; padding: 0">
+    <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+      <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+    </a>
+  </div>
+  <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+</div>
+
+<script>
+  var x = document.getElementsByTagName("nav")[0];
+
+  function toggleNav() {
+    if (x.className === "") {
+      x.className = " openNav";
+    } else {
+      x.className = "";
+    }
+  }
+  document.querySelector(".hamburger").addEventListener("click", toggleNav);
+
+  // scrolling effects
+  let navtopline = document.getElementById("navtopline");
+  let topnav = document.querySelector("nav#topnav");
+
+  window.onscroll = function() {
+
+    if (document.documentElement.scrollTop < 5) {
+      navtopline.style = "height: 5px;";
+      topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+    } else {
+      navtopline.style = "height: 1px;";
+      topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+    }
+
+  };
+
+  // Notice functionality
+  if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+    document.querySelector('div#notice').style.display = "flex";
+  }
+  function closeNotice() {
+    document.querySelector('div#notice').style.display = "none";
+    sessionStorage.setItem("noticed","1");
+  }
+
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+  }
+</script>
+<!-- Navbar End-->
+<div id="body">
+
+  <div class="title" style="color: #333; text-align: center;"><span>Easy MCF Ear</span></div>
+
+  <div id="series">
+  <div class="data">
+    <img alt="1" src="assets/easy_ear/mcf1.jpg"><br>
+  </div>
+  <div class="legend">
+    1.&nbsp; Middle fossa floor<br>
+    2. Middle meningeal artery<br>
+    &nbsp;&nbsp;&nbsp; - leads to foramen spinosum which is the most anterior landmark for orientation in middle fossa approach<br>
+    3.&nbsp; Greater superficial petrosal nerve in facial hiatus<br>
+    &nbsp;&nbsp;&nbsp; - lies 1 cm medial to foramen spinosum<br>
+    &nbsp;&nbsp;&nbsp; - axis of nerve runs medial to petrous pyramid<br>
+    4.&nbsp; Arcuate eminence<br>
+    &nbsp;&nbsp;&nbsp; - landmark for superior semicircular canal (not for IAC)<br>
+    &nbsp;&nbsp;&nbsp; - absent in 15%<br>
+    5.&nbsp; Superior petrosal sinus<br>
+    <br>
+    <span style="font-weight: bold;">Finding IAC</span><br>
+    &nbsp;&nbsp;&nbsp; - longitudinal axis of superior SCC forms a 60 degree angle with longitudinal axis of IAC anteriorly<br>
+    &nbsp;&nbsp;&nbsp; - if no landmarks, then open attic 1.5 cm behind
+    foramen spinosum and just medial to junction of squamous and petrosal
+    bone.&nbsp; Expose ossicles, cochelariform process, and facial canal
+    wich is followed to IAC.<br>
+  </div>
+  <div class="clearfix"></div>
+  <div class="data">
+    <img alt="2" src="assets/easy_ear/mcf2.jpg"><br>
+  </div>
+  <div class="legend">
+    1.&nbsp; TMJ in glenoid fossa<br>
+    2.&nbsp; Malleus (head)<br>
+    &nbsp;&nbsp;&nbsp; - note tendon of tensor tympani from cochleariform process which attaches to neck of malleus<br>
+    3.&nbsp; Incus (body)<br>
+    4.&nbsp; Internal carotid artery<br>
+    5.&nbsp; GSPN<br>
+    6.&nbsp; Cochlea (bluelined)<br>
+    &nbsp;&nbsp;&nbsp; - petrous apex air cells lie just anterior<br>
+    7.&nbsp; Geniculate ganglion<br>
+    &nbsp;&nbsp;&nbsp; - may be dehiscent in 25% of specimens<br>
+    8.&nbsp; Tensor tympani muscle<br>
+    &nbsp;&nbsp;&nbsp; - Eustachian tube lies just lateral to muscle<br>
+    9.&nbsp; Facial nerve (labyrinthine segment)<br>
+    &nbsp;&nbsp;&nbsp; - note falciform (transverse) crest below<br>
+    10.&nbsp; Facial nerve (meatal segment)<br>
+    &nbsp;&nbsp;&nbsp; - note cochlear nerve below<br>
+    11.&nbsp; Superior vestibular nerve<br>
+    &nbsp;&nbsp;&nbsp; - innervates superior and horizontal SCC and utricle<br>
+    &nbsp;&nbsp;&nbsp; - inferior vestibular nerve (not shown)<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ~ lies below SVN<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ~ singular nerve innervates posterior SCC<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ~ ampullary nerve innervates saccule<br>
+    12.&nbsp; Facial nerve (tympanic segment)<br>
+    13.&nbsp; Bill's bar (vertical crest)<br>
+    14.&nbsp; Superior (anterior)&nbsp; semicircular canal<br>
+    15.&nbsp; Posterior semicircular canal<br>
+    16.&nbsp; Horizontal (lateral)&nbsp; semicircular canal<br>
+    17.&nbsp; Vestibule<br>
+  </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div id="tooltip">
+    Images credit: Dr. F. Ling        
+  </div>
+</div>
+
+<div id="footer">
+  <div class="fa-social">
+    <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+    <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+    <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+    <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+    <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+  </div>   
+  <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+  
+</div>
+</body>
+</html>

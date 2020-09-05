@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="inc/css/doctorlife.css">
+  <title>Contact</title>
+  <style>
+    iframe {
+      margin: 0 auto;
+      display: block;
+      border-style:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="navtopline"></div>
+    <nav id="topnav">
+      <a class="links" href="https://doctorlife.in/ENT"><span style="color: darkblue; font-size: 1.2em; font-weight: 500;">#ENT</span> doctorlife</a>
+      <a class="links" href="about.html">About</a>
+      <!-- ENABLE FOR DROP-DOWN MENU 
+        <div class="dropdown-menu">
+          <button class="menu-btn">Open ></button>
+            <div class="menu-content">
+                <a class="links-hidden" href="#">Contact Us</a>
+                <a class="links-hidden" href="#">Visit Us</a>
+                <a class="links-hidden" href="#">About Us</a>
+            </div>
+        </div>
+        -->
+      <a class="hamburger float-right">&#9776;</a>
+    </nav>
+  </div>
+  
+  <style>
+  /* The Close Button */
+  .modal-close {
+    color: #999;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    font-size: 1em;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  </style>
+  <div id="notice" style="display: none; flex-flow:row nowrap; background: aliceblue; justify-content:flex-end; ; width: 100%; height: 64px">
+    <div style="flex: 0 1 180px; padding: 0 10px; align-self: center"><p style="color: black; font-weight:500">Get the App now!</p></div>
+    <div style="flex: 0 0 160px; padding: 0">
+      <a href='https://play.google.com/store/apps/details?id=doctorlife.ent&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+        <img style="height: 65px;" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+      </a>
+    </div>
+    <div style="flex: 0 0 20px"><span class="modal-close" onclick="closeNotice()">&times;</span></div>
+  </div>
+  
+  <script>
+    var x = document.getElementsByTagName("nav")[0];
+  
+    function toggleNav() {
+      if (x.className === "") {
+        x.className = " openNav";
+      } else {
+        x.className = "";
+      }
+    }
+    document.querySelector(".hamburger").addEventListener("click", toggleNav);
+  
+    // scrolling effects
+    let navtopline = document.getElementById("navtopline");
+    let topnav = document.querySelector("nav#topnav");
+  
+    window.onscroll = function() {
+  
+      if (document.documentElement.scrollTop < 5) {
+        navtopline.style = "height: 5px;";
+        topnav.style = "box-shadow: 0 5px 7px 0 rgba(0,0,0,.15);";
+      } else {
+        navtopline.style = "height: 1px;";
+        topnav.style = "box-shadow: 0 5px 10px 0 rgba(0,0,0,.25);";
+      }
+  
+    };
+  
+    // Notice functionality
+    if (getMobileOperatingSystem() === "Android" &&  sessionStorage.getItem("noticed") === null && (typeof noNotice === 'undefined')) {
+      document.querySelector('div#notice').style.display = "flex";
+    }
+    function closeNotice() {
+      document.querySelector('div#notice').style.display = "none";
+      sessionStorage.setItem("noticed","1");
+    }
+  
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+          return "Windows Phone";
+      }
+  
+      if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+  
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+  
+      return "unknown";
+    }
+  </script>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfFxyrsGTdOsCKPwQcVuxgT_8d5wIP2ZDGOJu6VuO41rUfgGg/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div id="footer">
+      <div class="fa-social">
+        <a class="round" href="https://www.facebook.com/drshajul/"><i class="fab fa-facebook-f"></i></a>
+        <a class="round" href="https://www.instagram.com/drshajul/"><i class="fab fa-instagram"></i></a>
+        <a class="round" href="https://www.linkedin.com/in/shajul/"><i class="fab fa-linkedin-in"></i></a>
+        <a class="round" href="https://doctorlife.in/contact.php"><i class="fa fa-envelope"></i></a>
+        <a class="round" href="https://play.google.com/store/apps/details?id=doctorlife.ent"><i class="fab fa-google-play"></i></a>
+      </div>   
+      <div class="float-right small" style="padding-top: 10px;">&copy; DrShajul 2010-2020</div><script>today = new Date(); document.querySelector('div.copyright').innerHTML = "&copy; DrShajul 2010 - " + today.getFullYear();</script>
+      
+    </div>
+  </body>
+</html>

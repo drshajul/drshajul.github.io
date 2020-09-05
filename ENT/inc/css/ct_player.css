@@ -1,0 +1,185 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #333;
+  color: #eee !important;
+}
+
+#ct-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: auto;
+  background-color: #333;
+  max-width: 1050px;
+}
+
+#ct-container .left {
+  flex: 0 0 400px;
+}
+
+#ct-container .right {
+  align-self: flex-end;
+  border: 1px solid gray;
+}
+
+#ct-container .gallery {
+  position: relative;
+  /* important so that overlayed lines can be placed absolute to this */
+  /* padding: 5px; */
+  background-color: #333;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 1024px) {
+  span.desktop {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  #ct-container .right {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  #ct-container {
+    flex-wrap: wrap;
+  }
+}
+
+div#tooltip {
+  max-width: 1050px;
+  text-align: center;
+  margin: auto;
+}
+
+div#reference {
+  position: relative;
+  max-width: 400px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 8px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+button.lessmore,
+button.plusminus,
+button.toggles {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 70%;
+  box-shadow:  3px 1px -2px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 1px 5px 0px rgba(0,0,0,.12);
+  color: white;
+  border: 1px solid white;
+  font-weight: 700;
+}
+
+button.lessmore {
+  background: #4CAF50;
+}
+
+button.plusminus {
+  background: #651fff;
+}
+
+button.toggles {
+  background: #eee;
+  color: #333;
+  border: 1px solid #333;
+}
+
+button.lessmore:hover,
+button.plusminus:hover,
+button.toggles:hover {
+  opacity: 1;
+}
+
+#morebutton,
+#lessbutton {
+  position: absolute;
+  bottom: 35px;
+}
+
+#expand {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#fullscreen {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#sagplus {
+  bottom: 130px
+}
+
+#sagminus {
+  bottom: 85px
+}
+
+#sagplus,
+#sagminus {
+  position: absolute;
+  right: 10px;
+}
+
+#lessbutton {
+  left: 10px
+}
+
+#morebutton {
+  right: 10px
+}
+
+
+.gallery img {
+  width: 100%;
+  min-width: 360px;
+  height: auto;
+}
+
+#seriesLab {
+  position: absolute;
+  top: 0; left: 0;
+  display: none;
+}
+div.message {
+  text-align: center;
+}
+div.message a {
+  text-decoration: none;
+  color: lightgreen;
+}

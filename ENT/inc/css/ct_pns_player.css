@@ -1,0 +1,10 @@
+@import "ct_player.css";
+
+div#vline {
+  position: absolute;
+  width: 2px;
+  height: 400px;
+  border-right: 2px solid red;
+  top: 2px;
+  left: 10px;
+}

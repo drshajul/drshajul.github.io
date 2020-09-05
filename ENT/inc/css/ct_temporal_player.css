@@ -1,0 +1,11 @@
+@import "ct_player.css";
+
+div#vline {
+  position: absolute;
+  transform: rotate(-18deg);
+  width: 2px;
+  height: 270px;
+  border-right: 5px solid red;
+  top: -10px;
+  left: 0px;
+}
